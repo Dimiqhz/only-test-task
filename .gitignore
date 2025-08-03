@@ -1,0 +1,33 @@
+# Зависимости PHP и JS
+/vendor/
+/node_modules/
+
+# Файлы окружения
+.env
+.env.*.local
+.env.testing
+
+# Laravel storage и public
+/storage/*.log
+/storage/*.key
+/storage/*.sqlite
+/storage/framework/cache/data
+/storage/app/public
+/public/storage
+
+/public/hot
+
+/.idea/
+/.vscode/
+/*.sublime-project
+/*.sublime-workspace
+
+# Логи и кэш тестов
+.phpunit.result.cache
+
+# Системные
+.DS_Store
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
