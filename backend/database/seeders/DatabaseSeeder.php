@@ -18,7 +18,20 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Position::factory()->count(5)->create();
-        ComfortCategory::factory()->count(4)->create();
+
+        $categoriesData = [
+            ['name' => 'Первая',   'level' => 1],
+            ['name' => 'Вторая',   'level' => 2],
+            ['name' => 'Третья',   'level' => 3],
+            ['name' => 'Четвёртая','level' => 4],
+            ['name' => 'Пятая',    'level' => 5],
+        ];
+        foreach ($categoriesData as $data) {
+            ComfortCategory::updateOrCreate(
+                ['level' => $data['level']],
+                ['name' => $data['name']]
+            );
+        }
 
         Position::all()->each(function (Position $pos) {
             $ids = ComfortCategory::inRandomOrder()

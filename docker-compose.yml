@@ -20,7 +20,8 @@ services:
     container_name: project-node
     working_dir: /var/www/html/frontend
     volumes:
-      - ./frontend:/var/www/html/frontend
+      - ./frontend:/var/www/html/frontend:delegated
+      - node_modules:/var/www/html/frontend/node_modules
     ports:
       - "5173:5173"
     networks:
@@ -58,6 +59,7 @@ services:
 
 volumes:
   dbdata:
+  node_modules:
 
 networks:
   app-network:

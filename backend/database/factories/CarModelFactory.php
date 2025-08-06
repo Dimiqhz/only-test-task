@@ -12,9 +12,11 @@ class CarModelFactory extends Factory
 
     public function definition(): array
     {
+        $categoryId = ComfortCategory::inRandomOrder()->first()->id;
+
         return [
-            'name'                 => $this->faker->unique()->words(2, true),
-            'comfort_category_id'  => ComfortCategory::factory(),
+            'name'                => $this->faker->unique()->words(2, true),
+            'comfort_category_id' => $categoryId,
         ];
     }
 }

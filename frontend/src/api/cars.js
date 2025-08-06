@@ -12,7 +12,7 @@ const api = axios.create({
  * @param {{ start_at: string, end_at: string, model?: string, category?: number }} params
  */
 export function fetchAvailableCars(params) {
-    return api.get('/available-cars', { params })
+    return api.get('available-cars', { params })
 }
 
 /**
@@ -20,5 +20,5 @@ export function fetchAvailableCars(params) {
  * (предполагается, что есть backend‐эндпоинт /api/comfort-categories)
  */
 export function fetchComfortCategories() {
-    return api.get('/comfort-categories')
+    return api.get('comfort-categories')
 }
